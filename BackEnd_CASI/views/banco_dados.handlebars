@@ -1,0 +1,62 @@
+<main>
+    <h3>BANCO DE DADOS CASI:</h3>
+
+    <hr>
+
+    <h4>(Usuários Comuns)</h4>
+    {{#each usuarios_comuns}}
+        <p>Identificador: {{identificador}}</p>
+        <p>Nome: {{nome}}</p>
+        <p>CPF: {{cpf}}</p>
+        <p>Email: {{email}}</p>
+        <p>Nome de Usuário: {{nome_usuario}}</p>
+        <p>Senha: {{senha}}</p>
+    {{/each}}
+
+    <hr>
+
+    <h4>(Usuários Administradores)</h4>
+    {{#each usuarios_administradores}}
+        <p>Identificador: {{identificador}}</p>
+        <p>Nome: {{nome}}</p>
+        <p>CPF: {{cpf}}</p>
+        <p>Email: {{email}}</p>
+        <p>Nome de Usuário: {{nome_usuario}}</p>
+        <p>Senha: {{senha}}</p>
+    {{/each}}
+
+    <hr>
+
+    <h4>(Usuários Super Administradores)</h4>
+    {{#each usuarios_super_administradores}}
+        <p>Identificador: {{identificador}}</p>
+        <p>Nome: {{nome}}</p>
+        <p>CPF: {{cpf}}</p>
+        <p>Email: {{email}}</p>
+        <p>Nome de Usuário: {{nome_usuario}}</p>
+        <p>Senha: {{senha}}</p>
+    {{/each}}
+
+    <hr>
+
+    <h4>(Postagens)</h4>
+    {{#each postagens}}
+        <p>Identificador: {{identificador}}</p>
+        <p>Conteúdo: {{conteudo}}</p>
+        <p>Comentário: {{comentario}}</p>
+        <p>Data de Criação: {{data_criacao}}</p>
+        <p>Horário de Criação: {{horario_criacao}}</p>
+    {{/each}}
+
+    <hr>
+
+    <h4>(Comentários)</h4>
+    {{#each comentarios}}
+        <p>Identificador: {{identificador}}</p>
+        <p>Texto: {{texto}}</p>
+        <p>Autor: {{autor}}</p>
+        <p>Destinatário: {{destinatario}}</p>
+        <p>Data de Criação: {{data_criacao}}</p>
+        <p>Horário de Criação: {{horario_criacao}}</p>
+    {{/each}}
+</main>
