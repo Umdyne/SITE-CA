@@ -1,15 +1,13 @@
 <template>
     <v-app>
-      <v-app-bar app color="#0a011c">
-        
-  
+      <v-app-bar app color="#2d057e">
         <v-row  cols="12" class="d-flex justify-space-between ">
           <v-col cols="1">
             
             <v-img
                 :height="50"
                 src="/casi_logo.jpg"
-                class="mt-3"
+                class="mt-3 bg-red"
                 >
             </v-img>
             
@@ -106,7 +104,13 @@
   </template>
   
   <script setup>
-  const tab = ref()
+    const tab = ref()
+    const loading = ref(false)
+    function onClick () {
+      loading.value = true
+      window.alert('Logou')
+      loading.value = false
+    }
   </script>
   
   <style>
