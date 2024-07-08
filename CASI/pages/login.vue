@@ -24,52 +24,61 @@
     </v-app-bar>
 
     <!------------------------------------------ Main ----------------------------------------------------------->
-    <v-main class="d-flex justify-center bg-deep-purple-darken-3">
+    <v-main class="d-flex justify-center bg-deep-purple-darken-3  ">
       <!------------------------------------------ Menu Lateral ----------------------------------------------------------->
-      <v-card class="w-100 h-100">
+      <v-card class="w-100 h-100  bg-transparent " min-width="400">
         <v-layout>
           
           <v-navigation-drawer color="#0b011d" v-model="menu_lateral.drawer" :location="$vuetify.display.mobile ? 'bottom' : undefined" temporary>
             <v-list :items="menu_lateral.items" ></v-list>
           </v-navigation-drawer>
-          <v-main  class="bg-deep-purple-darken-3">
-            <v-container class="pa-1">
-
-           
-            <v-row class="h-100 ma-0">
-          <v-col cols="6" class="flex">
-            <!------------------------------------------ Carrosel ---------------------------------------------->
-            <v-carousel show-arrows="hover" class="rounded-lg h-100" style="max-height: 830px; min-height: 830px;" cycle>
-              <v-carousel-item src="/img/cine.jpeg" cover>
-                <v-btn class="h-100 w-100" color="#FFFFFF00"></v-btn>
-              </v-carousel-item>
-              <v-carousel-item src="/img/casi_logo_hd.jpg" cover>
-                <v-btn class="h-100 w-100" color="#FFFFFF00"></v-btn>
-              </v-carousel-item>
-              <v-carousel-item src="/img/geek.jpg" cover>
-                <v-btn class="h-100 w-100" color="#FFFFFF00"></v-btn>
-              </v-carousel-item>
-            </v-carousel>
-          </v-col>
-          <!------------------------------------------ Cards Noticias ---------------------------------------------->
-          <v-col cols="6" class="h-80">
-            <v-card class="bg-deep-purple-darken-3 ma-n1 flat " style="max-height: 830px;">
-              <v-container fluid>
-                <v-row dense>
-                  <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-                    <v-card class="h-100 w-100" @click="()=>{console.alert('clicavel')}" href="//www.google.com">
-                      <v-img :src="card.src" class="align-end" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="200px" cover>
-                        <v-card-title class="text-white" v-text="card.title"></v-card-title>
-                      </v-img>
-                    </v-card>
-                  </v-col>
-                </v-row>
-              </v-container>
+           <!------------------------------------------ card login ----------------------------------------------------------->
+          <v-container class="h-screen mt-n16 mb-n5">
+            <v-main class="d-flex align-center ma-0 h-100 w-100 bg-transparent">
+            <v-card width="50%" elevation="5" rounded="lg" class="mx-auto bg-deep-purple-lighten-1 ">
+              <v-tabs
+                v-model="tab"
+                align-tabs="center"
+                
+              >
+                <v-tab v-for="n in [1,2]" :key="n" :value="n">
+                  {{ n == 2 ? 'Cadastrar' : 'Entrar' }}
+                </v-tab>
+              </v-tabs>
+      
+              <v-tabs-window v-model="tab" >
+                <v-tabs-window-item
+                v-for="n in [1,2]" :key="n"
+                  :value="n"
+                >
+                  <v-container fluid >
+                    <v-row class="">
+                      <v-col cols="12" v-if="n === 1">
+                        <Form>
+                          <v-text-field variant="outlined" label="Usuário"></v-text-field>
+                          <v-text-field variant="outlined" type="password" label="Senha"></v-text-field>
+                          <v-btn color="#4527A0">Entrar</v-btn>
+                          <v-btn class="ml-4" color="#4527A0">Recuperar senha</v-btn>
+                        </Form>
+                        
+                      </v-col>
+                      <v-col cols="12" v-else>
+                        <Form>
+                          <v-text-field variant="outlined" label="Nome"></v-text-field>
+                          <v-text-field variant="outlined" label="Usuário"></v-text-field>
+                          <v-text-field variant="outlined" type="password" label="Senha"></v-text-field>
+                          <v-text-field variant="outlined" type="email" label="E-mail"></v-text-field>
+                          <v-btn color="#4527A0">Cadastrar</v-btn>
+                        </Form>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-tabs-window-item>
+              </v-tabs-window>
             </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-          </v-main>
+        <!-- Page content goes here -->
+      </v-main>
+          </v-container>
         </v-layout>
       </v-card>
       
