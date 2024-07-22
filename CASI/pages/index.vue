@@ -39,7 +39,7 @@
             <v-row class="h-100 ma-0">
           <v-col cols="6" class="flex">
             <!------------------------------------------ Carrosel ---------------------------------------------->
-            <v-carousel show-arrows="hover" class="rounded-lg h-100" style="max-height: 830px; min-height: 830px;" cycle>
+            <v-carousel show-arrows="hover" class="rounded-lg h-100 elevation-0" style="max-height: 830px; min-height: 830px;" cycle>
               <v-carousel-item src="/img/cine.jpeg" cover>
                 <v-btn class="h-100 w-100" color="#FFFFFF00"></v-btn>
               </v-carousel-item>
@@ -53,11 +53,11 @@
           </v-col>
           <!------------------------------------------ Cards Noticias ---------------------------------------------->
           <v-col cols="6" class="h-80">
-            <v-card class="bg-deep-purple-darken-3 ma-n1 flat " style="max-height: 830px;">
+            <v-card class="bg-deep-purple-darken-3 ma-n1 flat elevation-0 " style="max-height: 830px;" >
               <v-container fluid>
                 <v-row dense>
                   <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-                    <v-card class="h-100 w-100" @click="()=>{console.alert('clicavel')}" href="//www.google.com">
+                    <v-card class="h-100 w-100" @click="()=>{console.alert('clicavel')}" :to="{ path: '/noticia' }">
                       <v-img :src="card.src" class="align-end" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="200px" cover>
                         <v-card-title class="text-white" v-text="card.title"></v-card-title>
                       </v-img>

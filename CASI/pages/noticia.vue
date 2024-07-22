@@ -24,7 +24,7 @@
       </v-app-bar>
   
       <!------------------------------------------ Main ----------------------------------------------------------->
-      <v-main class="d-flex justify-center bg-deep-purple-darken-3">
+      <v-main class="d-flex justify-center bg-deep-purple-darken-3 h-100">
         <!------------------------------------------ Menu Lateral ----------------------------------------------------------->
         <v-card class="w-100 h-100">
           <v-layout>
@@ -33,42 +33,165 @@
               <v-list :items="menu_lateral.items" ></v-list>
             </v-navigation-drawer>
             <v-main  class="bg-deep-purple-darken-3">
-              <v-container class="pa-1">
-  
-             
-              <v-row class="h-100 ma-0">
-            <v-col cols="6" class="flex">
-              <!------------------------------------------ Carrosel ---------------------------------------------->
-              <v-carousel show-arrows="hover" class="rounded-lg h-100" style="max-height: 830px; min-height: 830px;" cycle>
-                <v-carousel-item src="/img/cine.jpeg" cover>
-                  <v-btn class="h-100 w-100" color="#FFFFFF00"></v-btn>
-                </v-carousel-item>
-                <v-carousel-item src="/img/casi_logo_hd.jpg" cover>
-                  <v-btn class="h-100 w-100" color="#FFFFFF00"></v-btn>
-                </v-carousel-item>
-                <v-carousel-item src="/img/geek.jpg" cover>
-                  <v-btn class="h-100 w-100" color="#FFFFFF00"></v-btn>
-                </v-carousel-item>
-              </v-carousel>
-            </v-col>
-            <!------------------------------------------ Cards Noticias ---------------------------------------------->
-            <v-col cols="6" class="h-80">
-              <v-card class="bg-deep-purple-darken-3 ma-n1 flat " style="max-height: 830px;">
-                <v-container fluid>
-                  <v-row dense>
-                    <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-                      <v-card class="h-100 w-100" @click="()=>{console.alert('clicavel')}" href="//www.google.com">
-                        <v-img :src="card.src" class="align-end" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="200px" cover>
-                          <v-card-title class="text-white" v-text="card.title"></v-card-title>
-                        </v-img>
+
+              <v-container class="pa-1 bg-red h-screen my-5 bg-deep-purple-darken-1 rounded-lg">
+                <v-row>
+                  <v-col cols="8" class=" bg-transparent">
+                    <v-card
+                    class="ma-auto rounded-lg bg-transparent elevation-0"
+                    
+                  > 
+                    <v-card-title class="text-h3">Fim da Greve</v-card-title>
+                    <v-card-subtitle class="pb-5">
+                      Greve finalmente termina...
+                    </v-card-subtitle>
+                    <v-img
+                      class="align-end text-white bg-deep-purple-darken-1"
+                      max-height="400"
+                      src="https://crn1.com.br/wp-content/uploads/2024/06/fim-da-Greve.jpg"
+                      
+                    >
+                      
+                    </v-img>
+
+                    
+
+                    <v-card-text class="text-h6">
+                      <div class="mb-5">Cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve
+                        , cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve
+                        , cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve, cabou a greve.
+                      </div>
+
+                      <div class="mb-5">Voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas,
+                        voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas,
+                        voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas, voltou as aulas. </div>
+                    </v-card-text>
+
+                    <v-card class="mx-auto" max-width="400">
+                      <v-card-title>
+                        O que achou da noticia?
+                      </v-card-title>
+                      <v-card-text>
+                        <v-radio-group >
+                          <v-radio label="Otima" value="otima"></v-radio>
+                          <v-radio label="Boa" value="boa"></v-radio>
+                          <v-radio label="Mais ou menos" value="maisoumenos"></v-radio>
+                          <v-radio label="Ruim" value="ruim"></v-radio>
+                          <v-radio label="Pessima" value="pessimaim"></v-radio>
+                        </v-radio-group>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-btn color="primary" @click="submitVote">Votar</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-card>
+
+
+                  </v-col>
+                  <v-col class="">
+                    
+                    
+                      <v-card class="my-4 mr-2 text-white" color="deep-purple-lighten-1" >
+                        <v-card-actions>
+                          <v-list-item class="w-100">
+                            <template v-slot:prepend>
+                              <v-avatar
+                                color="grey-darken-3"
+                                image="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                              ></v-avatar>
+                            </template>
+
+                            <v-list-item-title>Jovem Interessado</v-list-item-title>
+
+                            <v-list-item-subtitle>Aluno</v-list-item-subtitle>
+
+                            <template v-slot:append>
+                              <div class="justify-self-end">
+                                <v-btn icon="mdi-thumb-up"> </v-btn>
+
+                                <span class="subheading me-2">3</span>
+                              </div>
+                            </template>
+                          </v-list-item>
+                        </v-card-actions>
+
+                        <v-card-text class="text-h5 py-2"> Que fato interessante </v-card-text>
                       </v-card>
-                    </v-col>
-                  </v-row>
-                </v-container>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
+
+                      <v-card class="my-4 mr-2 text-white" color="deep-purple-lighten-1" >
+                        <v-card-actions>
+                          <v-list-item class="w-100">
+                            <template v-slot:prepend>
+                              <v-avatar
+                                color="grey-darken-3"
+                                image="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                              ></v-avatar>
+                            </template>
+
+                            <v-list-item-title>Outro Jovem Interessado</v-list-item-title>
+
+                            <v-list-item-subtitle>Aluno</v-list-item-subtitle>
+
+                            <template v-slot:append>
+                              <div class="justify-self-end">
+                                <v-btn icon="mdi-thumb-up"> </v-btn>
+
+                                <span class="subheading me-2">1</span>
+                              </div>
+                            </template>
+                          </v-list-item>
+                        </v-card-actions>
+
+                        <v-card-text class="text-h5 py-2"> Concordo </v-card-text>
+                      </v-card>
+
+                      <v-card class="my-4 mr-2 text-white" color="deep-purple-lighten-1" >
+                        <v-card-actions>
+                          <v-list-item class="w-100">
+                            <template v-slot:prepend>
+                              <v-avatar
+                                color="grey-darken-3"
+                                image="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                              ></v-avatar>
+                            </template>
+
+                            <v-list-item-title>Adulto Interessado</v-list-item-title>
+
+                            <v-list-item-subtitle>Professor</v-list-item-subtitle>
+
+                            <template v-slot:append>
+                              <div class="justify-self-end">
+                                <v-btn icon="mdi-thumb-up"> </v-btn>
+
+                                <span class="subheading me-2">78</span>
+                              </div>
+                            </template>
+                          </v-list-item>
+                        </v-card-actions>
+
+                        <v-card-text class="text-h5 py-2"> Sim </v-card-text>
+                      </v-card>
+
+
+                      <v-form class="mr-2">
+                        
+                          
+                           
+                              <v-text-field
+                              label="Escreva um comentário"></v-text-field>
+                              <v-btn class="mt-n7 ">Enviar</v-btn>
+                            
+                          
+                        
+                      </v-form>
+                    
+                  </v-col>
+
+                </v-row>
+  
+                
+              
+              </v-container>
             </v-main>
           </v-layout>
         </v-card>
